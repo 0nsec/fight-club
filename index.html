@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Flight Club Academy</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Orbitron', sans-serif;
+      background-color: #0a0a0a;
+      color: white;
+    }
+    h2, h3, p {
+      font-family: 'Bebas Neue', sans-serif;
+    }
+    .glow-red {
+      box-shadow: 0 0 8px #ff0000, 0 0 16px #ff0000;
+    }
+    .neon-text-blue {
+      color: #00ccff;
+      text-shadow: 0 0 5px #00ccff, 0 0 10px #00ccff, 0 0 20px #00ccff;
+    }
+    .neon-text-red {
+      color: #ff3c3c;
+      text-shadow: 0 0 5px #ff3c3c, 0 0 10px #ff3c3c, 0 0 20px #ff3c3c;
+    }
+    .glass-button {
+      background-color: rgba(255, 0, 0, 0.1);
+      border: 2px solid #ff3c3c;
+      color: white;
+      backdrop-filter: blur(8px);
+    }
+    .glass-button:hover {
+      background-color: rgba(255, 0, 0, 0.2);
+    }
+    .hero-glow {
+      background: linear-gradient(to right, #ffffff 20%, #5e8bff 80%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 0 12px #ffffff, 0 0 24px #5e8bff, 0 0 36px #5e8bff;
+      letter-spacing: 2px;
+      animation: pulseGlow 3s infinite ease-in-out;
+    }
+    @keyframes pulseGlow {
+      0%, 100% {
+        text-shadow: 0 0 12px #ffffff, 0 0 24px #5e8bff, 0 0 36px #5e8bff;
+      }
+      50% {
+        text-shadow: 0 0 18px #ffffff, 0 0 32px #7daeff, 0 0 48px #7daeff;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="flex justify-between items-center p-6 fixed w-full z-50 bg-black bg-opacity-50">
+    <div class="font-bold text-xl text-white px-4 py-2 rounded" style="background: linear-gradient(135deg, rgba(127,94,255,0.3), rgba(0,255,255,0.2)); border: 1px solid rgba(127,94,255,0.4); backdrop-filter: blur(12px); text-shadow: 0 0 12px #7f5eff, 0 0 24px #7f5eff;">Flight Club</div>
+    
+    <div class="space-x-8 hidden md:flex">
+      <a href="about.html" class="text-white hover:text-red-400">ABOUT</a>
+      <a href="programs.html" class="text-white hover:text-red-400">PROGRAMS</a>
+      <a href="schedule.html" class="text-white hover:text-red-400">SCHEDULE</a>
+      <a href="gallery.html" class="text-white hover:text-red-400">GALLERY</a>
+      <a href="contact.html" class="text-white hover:text-red-400">CONTACT</a>
+    </div>
+    <!-- Join Button -->
+    <a href="join.html" class="glass-button px-4 py-2 rounded glow-red hidden md:inline-block">JOIN NOW</a>
+  </nav>
+
+  <!-- Hero Section with YouTube Background -->
+  <section class="h-screen relative overflow-hidden">
+    <!-- YouTube Background Video -->
+    <div class="absolute inset-0 z-0">
+      <iframe
+        src="https://www.youtube.com/embed/i6srwekM-RU?autoplay=1&mute=1&controls=0&showinfo=0&loop=1&playlist=i6srwekM-RU&modestbranding=1&enablejsapi=1"
+        frameborder="0"
+        allow="autoplay; fullscreen"
+        class="w-full h-full absolute top-0 left-0 object-cover pointer-events-none"
+      ></iframe>
+    </div>
+
+    <!-- Overlay -->
+    <div class="absolute inset-0 bg-black bg-opacity-60 z-10"></div>
+
+    <!-- Hero Content -->
+    <div class="relative z-20 flex flex-col justify-center items-center h-full text-center px-4" data-aos="fade-up">
+      <h1 class="text-6xl md:text-7xl font-extrabold mb-2 hero-glow">GET UP</h1>
+      <h2 class="text-2xl md:text-4xl text-gray-300 tracking-wide mb-4" style="font-family: 'Orbitron', sans-serif;">KICK BOXING ACADEMY</h2>
+      <p class="neon-text-red text-lg mb-6 tracking-widest" style="font-family: 'Orbitron', sans-serif;">DISCIPLINE. POWER. TRANSFORMATION.</p>
+      <a href="join.html" class="glass-button px-6 py-3 rounded text-lg glow-red">JOIN NOW</a>
+    </div>
+  </section>
+
+  <!-- Programs Section -->
+  <section class="py-20 px-4 max-w-6xl mx-auto">
+    <h3 class="text-center text-3xl md:text-4xl neon-text-blue mb-10" data-aos="fade-down">PROGRAMS</h3>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+      <div class="p-4 border border-blue-400 rounded-lg text-center transition hover:scale-105 hover:shadow-lg" data-aos="zoom-in">
+        <img src="icons/self-defense.svg" alt="Self Defense Icon" class="mx-auto mb-2 h-10" />
+        <p>3-MONTH SELF-DEFENSE COURSE</p>
+      </div>
+      <div class="p-4 border border-blue-400 rounded-lg text-center transition hover:scale-105 hover:shadow-lg" data-aos="zoom-in" data-aos-delay="100">
+        <img src="icons/kickboxing.svg" alt="Kickboxing Icon" class="mx-auto mb-2 h-10" />
+        <p>KICKBOXING</p>
+      </div>
+      <div class="p-4 border border-blue-400 rounded-lg text-center transition hover:scale-105 hover:shadow-lg" data-aos="zoom-in" data-aos-delay="200">
+        <img src="icons/kungfu.svg" alt="Kung Fu Icon" class="mx-auto mb-2 h-10" />
+        <p>KUNG FU</p>
+      </div>
+      <div class="p-4 border border-red-400 rounded-lg text-center transition hover:scale-105 hover:shadow-lg" data-aos="zoom-in" data-aos-delay="300">
+        <img src="icons/taekwondo.svg" alt="Taekwondo Icon" class="mx-auto mb-2 h-10" />
+        <p>TAEKWONDO <span class="text-sm text-red-400">(Featured)</span></p>
+      </div>
+      <div class="p-4 border border-blue-400 rounded-lg text-center transition hover:scale-105 hover:shadow-lg" data-aos="zoom-in">
+        <img src="icons/personal-training.svg" alt="Personal Training Icon" class="mx-auto mb-2 h-10" />
+        <p>PERSONAL TRAINING</p>
+      </div>
+      <div class="p-4 border border-blue-400 rounded-lg text-center transition hover:scale-105 hover:shadow-lg" data-aos="zoom-in" data-aos-delay="100">
+        <img src="icons/weight-training.svg" alt="Weight Training Icon" class="mx-auto mb-2 h-10" />
+        <p>WEIGHT TRAINING</p>
+      </div>
+      <div class="p-4 border border-blue-400 rounded-lg text-center transition hover:scale-105 hover:shadow-lg" data-aos="zoom-in" data-aos-delay="200">
+        <img src="icons/fitness.svg" alt="Fitness Icon" class="mx-auto mb-2 h-10" />
+        <p>FITNESS PROGRAMS</p>
+      </div>
+      <div class="p-4 border border-blue-400 rounded-lg text-center transition hover:scale-105 hover:shadow-lg" data-aos="zoom-in" data-aos-delay="300">
+        <img src="icons/gymnastics.svg" alt="Gymnastics Icon" class="mx-auto mb-2 h-10" />
+        <p>GYMNASTICS</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-black bg-opacity-60 py-8 text-center text-gray-400 text-sm">
+    <p>© 2025 Flight Club Academy. All rights reserved.</p>
+    <div class="mt-4 space-x-4">
+      <a href="#" class="hover:text-white">Facebook</a>
+      <a href="#" class="hover:text-white">Instagram</a>
+      <a href="#" class="hover:text-white">YouTube</a>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    document.getElementById('menuToggle').addEventListener('click', function () {
+      const menu = document.getElementById('mobileMenu');
+      menu.classList.toggle('hidden');
+    });
+  </script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init();</script>
+</body>
+</html>
