@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gallery | Flight Club Boxing Academy</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet">
+  <style>
+    @keyframes fade-in {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fade-in {
+      animation: fade-in 1s ease-out;
+    }
+    body {
+      font-family: 'Orbitron', sans-serif;
+      background-color: #0a0a0a;
+      color: white;
+    }
+    h1, h2, h3 {
+      font-family: 'Bebas Neue', cursive;
+    }
+    .fighter-card {
+      background-color: rgba(255, 255, 255, 0.05);
+      padding: 1.5rem;
+      border-radius: 0.75rem;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      transition: transform 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    .fighter-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(255, 255, 255, 0.3);
+    }
+    .fighter-img {
+      width: 100%;
+      max-width: 240px;
+      border-radius: 0.75rem;
+      margin-bottom: 1rem;
+      box-shadow: 0 0 12px rgba(255,255,255,0.1);
+    }
+  </style>
+</head>
+<body>
+  <!-- Hero Section -->
+  <section class="h-72 flex items-center justify-center text-center relative mt-16" style="background: url('images/gallery-hero.jpg') center/cover no-repeat;">
+    <div class="absolute inset-0 bg-black bg-opacity-60"></div>
+    <h1 class="relative z-10 text-5xl font-bold text-white drop-shadow-[0_0_10px_rgba(255,255,255,0.7)]">OUR GALLERY</h1>
+  </section>
+
+  <!-- Fighter Details Section -->
+  <section class="py-16 px-6 max-w-6xl mx-auto space-y-12 animate-fade-in">
+    <h2 class="text-4xl text-center text-red-400 mb-10">Meet Our Fighters</h2>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8">
+
+      <div class="fighter-card">
+        <img src="images/fighter1.png" alt="Bilal Shaikh" class="fighter-img">
+        <h3 class="text-2xl text-yellow-400 mb-2">Bilal "Iron Elbow" Shaikh 💥</h3>
+        <p class="text-sm text-gray-300 italic mb-2">Close Combat Specialist</p>
+        <p><strong>Specialty:</strong> Kickboxing, Elbow Strikes</p>
+        <ul class="list-disc list-inside text-sm mt-2">
+          <li>Knockout King Award</li>
+          <li>Inter-City Combat Silver Medalist</li>
+        </ul>
+        <p class="mt-2 text-xs text-gray-400">Once broke a punching bag chain with an elbow. Pure power.</p>
+      </div>
+
+
+      <div class="fighter-card">
+        <img src="images/fighter2.png" alt="Korish Khan" class="fighter-img">
+        <h3 class="text-2xl text-yellow-400 mb-2">Korish "The Tank" Khan 🛡</h3>
+        <p class="text-sm text-gray-300 italic mb-2">National Heavyweight Powerhouse</p>
+        <p><strong>Specialty:</strong> Boxing, Power Striking, Endurance</p>
+        <ul class="list-disc list-inside text-sm mt-2">
+          <li>2x National Heavyweight Champion</li>
+          <li>Golden Gloves Finalist</li>
+          <li>Iron Warrior & Best Chin Awards</li>
+        </ul>
+        <p class="mt-2 text-xs text-gray-400">Takes hits like steel. Inspires the gym with his intensity.</p>
+      </div>
+
+      <div class="fighter-card">
+        <img src="images/fighter.png" alt="Tan Ali" class="fighter-img">
+        <h3 class="text-2xl text-yellow-400 mb-2">Tan "The Wolf" Ali 🥇</h3>
+        <p class="text-sm text-gray-300 italic mb-2">Head Trainer – Legendary Status</p>
+        <p><strong>Specialty:</strong> Muay Thai, MMA, Combat Strategy</p>
+        <ul class="list-disc list-inside text-sm mt-2">
+          <li>3x World Muay Thai Champion</li>
+          <li>2x Asian MMA Title Holder</li>
+          <li>Black Belt in BJJ & Karate</li>
+        </ul>
+        <p class="mt-2 text-xs text-gray-400">Known for his spinning elbow knockout win – a moment of legend.</p>
+      </div>
+
+      <div class="fighter-card">
+        <img src="images/fighter4.png" alt="Ahmed Rizvi" class="fighter-img">
+        <h3 class="text-2xl text-yellow-400 mb-2">Ahmed "Ghost Steps" Rizvi 🌀</h3>
+        <p class="text-sm text-gray-300 italic mb-2">Speed & Evasion Expert</p>
+        <p><strong>Specialty:</strong> Footwork, Evasion, Karate</p>
+        <ul class="list-disc list-inside text-sm mt-2">
+          <li>National Karate Champion</li>
+          <li>Best Technical Fighter</li>
+        </ul>
+        <p class="mt-2 text-xs text-gray-400">Untouched in last 10 sparring sessions. Precision master.</p>
+      </div>
+
+    </div>
+  </section>
+
+</body>
+</html>
