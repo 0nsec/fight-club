@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About | Fight Club Boxing Academy</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Orbitron', sans-serif;
+      background-color: #0a0a0a;
+      color: white;
+    }
+    h2, h3, p {
+      font-family: 'Bebas Neue', sans-serif;
+    }
+    .hero-heading {
+      text-shadow: 0 0 10px #7f5eff, 0 0 20px #7f5eff;
+      background: linear-gradient(to right, #ffffff, #7f5eff, #ffffff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: sparkle 3s infinite alternate ease-in-out;
+    }
+    @keyframes sparkle {
+      0% { text-shadow: 0 0 5px #7f5eff, 0 0 10px #7f5eff; }
+      50% { text-shadow: 0 0 15px #a88fff, 0 0 30px #a88fff; }
+      100% { text-shadow: 0 0 10px #7f5eff, 0 0 25px #7f5eff; }
+    }
+    .instructor-wrapper {
+      transition: all 0.5s ease-in-out;
+      max-width: 100%;
+      overflow: hidden;
+      cursor: pointer;
+    }
+    .instructor-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: rgba(255, 255, 255, 0.05);
+      border-radius: 50%;
+      padding: 2rem;
+      gap: 1rem;
+      transition: all 0.5s ease;
+      max-width: 300px;
+      margin: auto;
+      transform: scale(1);
+    }
+    .instructor-card:hover {
+      transform: scale(1.03);
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    }
+    .instructor-card img {
+      width: 150px;
+      height: 150px;
+      border-radius: 9999px;
+      object-fit: cover;
+      border: 4px solid #ef4444;
+      transition: all 0.5s ease;
+    }
+    .instructor-card.expanded {
+      border-radius: 1rem;
+      flex-direction: row;
+      align-items: flex-start;
+      max-width: 100%;
+      transform: scale(1.02);
+    }
+    .instructor-card.expanded img {
+      border-radius: 0.5rem;
+      margin-right: 1.5rem;
+      width: 200px;
+      height: auto;
+    }
+    .instructor-details {
+      display: none;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+    .instructor-card.expanded .instructor-details {
+      display: block;
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="flex justify-between items-center p-6 fixed w-full z-50 bg-black bg-opacity-50">
+    <div class="font-bold text-xl text-white px-4 py-2 rounded" style="background: linear-gradient(135deg, rgba(127,94,255,0.3), rgba(0,255,255,0.2)); border: 1px solid rgba(127,94,255,0.4); backdrop-filter: blur(12px); text-shadow: 0 0 12px #7f5eff, 0 0 24px #7f5eff;">GET UP</div>
+    <div class="space-x-8 hidden md:flex">
+      <a href="about.html" class="text-white hover:text-red-400">ABOUT</a>
+      <a href="programs.html" class="text-white hover:text-red-400">PROGRAMS</a>
+      <a href="schedule.html" class="text-white hover:text-red-400">SCHEDULE</a>
+      <a href="gallery.html" class="text-white hover:text-red-400">GALLERY</a>
+      <a href="contact.html" class="text-white hover:text-red-400">CONTACT</a>
+    </div>
+    <!-- Mobile Menu Toggle -->
+    <button class="md:hidden text-white text-2xl" id="menuToggle" onclick="toggleMobileMenu()">☰</button>
+    <!-- Join Button -->
+    <a href="join.html" class="glass-button px-4 py-2 rounded glow-red hidden md:inline-block">JOIN NOW</a>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" class="hidden absolute top-20 left-0 w-full bg-gradient-to-b from-black to-gray-900 bg-opacity-95 flex flex-col gap-4 px-8 py-6 text-center md:hidden z-40 shadow-2xl">
+    <a href="about.html" class="text-white hover:text-red-400 text-lg tracking-wide">ABOUT</a>
+    <a href="programs.html" class="text-white hover:text-red-400 text-lg tracking-wide">PROGRAMS</a>
+    <a href="schedule.html" class="text-white hover:text-red-400 text-lg tracking-wide">SCHEDULE</a>
+    <a href="gallery.html" class="text-white hover:text-red-400 text-lg tracking-wide">GALLERY</a>
+    <a href="contact.html" class="text-white hover:text-red-400 text-lg tracking-wide">CONTACT</a>
+    <a href="join.html" class="glass-button px-4 py-2 rounded glow-red text-lg">JOIN NOW</a>
+  </div>
+  <!-- Hero -->
+  <section class="h-72 flex items-center justify-center text-center relative" style="background: url('images/about-hero.jpg') center/cover no-repeat;">
+    <div class="absolute inset-0 bg-black bg-opacity-60"></div>
+    <h1 class="relative z-10 text-5xl font-bold hero-heading" data-aos="fade-down">ABOUT US</h1>
+  </section>
+  <!-- Mission and Values -->
+  <section class="py-16 px-6 max-w-6xl mx-auto grid md:grid-cols-2 gap-12" data-aos="fade-up">
+    <div>
+      <h2 class="text-3xl text-blue-400 mb-4">OUR MISSION</h2>
+      <p class="text-gray-300 leading-relaxed">
+        At Get Up Kick Boxing Academy, our mission is to empower individuals through discipline, strength, and confidence. We train minds and bodies to rise above challenges using martial arts as a tool for growth and Healthy Body.
+        <br>
+        چاہے آپ یہاں اعتماد پیدا کرنے، فٹ ہونے، اپنا دفاع سیکھنے، یا قومی سطح پر مقابلہ کرنے کے لیے آئے ہیں، ہمارے پاس آپ کے لیے جگہ ہے۔ گیٹ اپ کِک باکسنگ اکیڈمی میں، ہمارا مشن بچوں کو نظم و ضبط، طاقت اور اعتماد کے ذریعے بااختیار بنانا ہے۔ ہم دماغوں اور جسموں کو تربیت دیتے ہیں کہ وہ مارشل آرٹس کو ترقی اور صحت مند جسم کے لیے ایک آلے کے طور پر استعمال کرتے ہوئے چیلنجوں کا مقابلہ کریں۔
+      </p>
+    </div>
+    <div>
+      <h2 class="text-3xl text-blue-400 mb-4">OUR VALUES</h2>
+      <ul class="list-disc list-inside text-gray-300 space-y-2">
+        <li>Discipline & Respect</li>
+        <li>Personal Transformation</li>
+        <li>Strength & Agility</li>
+        <li>Self-Defense & Confidence</li>
+        <li>Healty Body with Healthy Mind</li>
+      </ul>
+    </div>
+  </section>
+  <!-- Instructor Section -->
+  <section class="py-16 px-6 bg-gray-900 bg-opacity-40" data-aos="fade-up">
+    <h2 class="text-center text-3xl text-red-400 mb-12">MEET OUR INSTRUCTOR</h2>
+    <div class="instructor-wrapper" onclick="toggleInstructorCard()">
+      <div id="instructorCard" class="instructor-card">
+        <img src="images/instructor1.jpeg" alt="Instructor 1">
+        <div>
+          <h3 class="text-2xl text-white">Master M. Akbar Ali</h3>
+          <p class="text-sm text-gray-400">Head Coach</p>
+          <div class="instructor-details">
+            <p class="text-gray-300 mt-2">
+              With over 25 years of experience, Master Akbar Ali (2nd Dan Black Belt) has trained national level athletes and specializes in Kang fu. His coaching focuses on discipline, realworld selfdefense, physical fitness and Healthy Mind.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Footer -->
+  <footer class="bg-black bg-opacity-60 py-8 text-center text-gray-400 text-sm">
+    <p>© 2025 Flight Club Boxing Academy. All rights reserved.</p>
+    <div class="mt-4 space-x-4">
+      <a href="#" class="hover:text-white">Facebook</a>
+      <a href="#" class="hover:text-white">Instagram</a>
+      <a href="#" class="hover:text-white">YouTube</a>
+    </div>
+  </footer>
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init();</script>
+  <script>
+    const expandSound = new Audio('sounds/expand.mp3');
+    const clickSound = new Audio('sounds/click.mp3');
+
+    function toggleInstructorCard() {
+      const card = document.getElementById("instructorCard");
+      const expanded = card.classList.toggle("expanded");
+      if (expanded) {
+        expandSound.play();
+      }
+    }
+
+    function playClickSound(event) {
+      clickSound.play();
+      const href = event.currentTarget.getAttribute('href');
+      event.preventDefault();
+      setTimeout(() => {
+        window.location.href = href;
+      }, 150);
+    }
+
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobileMenu');
+      menu.classList.toggle('hidden');
+    }
+  </script>
+</body>
+</html>
